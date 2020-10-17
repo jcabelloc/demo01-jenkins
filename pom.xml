@@ -26,16 +26,6 @@
   
   <build>
   <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-compiler-plugin</artifactId>
-      <version>3.8.0</version>
-      <!-- 
-      <configuration>
-          <release>11</release>  
-      </configuration>
-      -->
-    </plugin>
     <!--  El plugin Surefire tiene un solo objetivo (surefire:test), ejecutar las pruebas unitarias del proyecto. -->
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
