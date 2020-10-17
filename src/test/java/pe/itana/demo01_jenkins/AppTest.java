@@ -1,30 +1,31 @@
 package pe.itana.demo01_jenkins;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import org.junit.After;
-import org.junit.Before;
-
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 
 /**
  * Unit test for simple App.
  */
-public class AppTest  {
+class AppTest  {
     
 	
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
-    @Before
+    @BeforeEach
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
     }
 
     @Test
-    public void testAppConstructor() {
+    void testAppConstructor() {
         try {
             new App();
         } catch (Exception e) {
@@ -33,7 +34,7 @@ public class AppTest  {
     }
     
     @Test
-    public void testAppMain()
+    void testAppMain()
     {
         App.main(null);
         try {
@@ -43,7 +44,7 @@ public class AppTest  {
         }
     }
     
-    @After
+    @AfterEach
     public void cleanUpStreams() {
         System.setOut(null);
     }
